@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+
+html{
+  /* overflow:none!important; */
 }

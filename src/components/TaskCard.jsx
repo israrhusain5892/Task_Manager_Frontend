@@ -1,10 +1,12 @@
 // src/components/TaskCard.jsx
 "use client"
+import { useGlobalContext } from '@/app/Context/GlobalContext';
 import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const TaskCard = ({ title, description, status, onEdit, onDelete }) => {
   // Determine badge color based on status
+   const{user}=useGlobalContext()
   const statusColors = {
     pending: 'bg-yellow-100 text-yellow-800',
     completed: 'bg-green-100 text-green-800',
@@ -23,18 +25,23 @@ const TaskCard = ({ title, description, status, onEdit, onDelete }) => {
       </div>
       <p className="mt-2 text-gray-600">{description}</p>
       <div className="mt-4 flex space-x-2">
-        <button
+      
+          <button
           onClick={onEdit}
           className="flex items-center px-3 py-1.5 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-600 transition-colors"
         >
           <FaEdit className="mr-1" /> Edit
         </button>
-        <button
+     
+        {
+           user.role.toLowerCase()==='admin' &&  <button
           onClick={onDelete}
           className="flex items-center px-3 py-1.5 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-600 transition-colors"
         >
           <FaTrash className="mr-1" /> Delete
         </button>
+        }
+       
       </div>
     </div>
   );

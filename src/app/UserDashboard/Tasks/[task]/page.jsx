@@ -109,7 +109,7 @@ const TaskPage = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full p-3 mb-6 border border-gray-300 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className='md:w-40 w-36 md:text-md text-[12px] cursor-pointer hover:bg-blue-600 rounded h-12 p-3 shadow-md bg-blue-500 text-white' onClick={openModel}>ADD NEW TASK</button>
+           {user.role.toLowerCase==='admin' && <button className='md:w-40 w-36 md:text-md text-[12px] cursor-pointer hover:bg-blue-600 rounded h-12 p-3 shadow-md bg-blue-500 text-white' onClick={openModel}>ADD NEW TASK</button>} 
 
           </div>
 

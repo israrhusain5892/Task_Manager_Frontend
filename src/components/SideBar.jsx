@@ -12,7 +12,7 @@ import { useGlobalContext } from '@/app/Context/GlobalContext';
 import { RiTeamLine } from "react-icons/ri";
 const Sidebar = ({ isOpen, toggleSidebar }) => {
 
-      const{setTasksData}= useGlobalContext();
+      const{setTasksData,user}= useGlobalContext();
 
       const fetchTask=async (status)=>{
             const res=await getAllTasks()
@@ -45,7 +45,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
          <div onClick={(e)=>fetchTask(status[0])}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><MdOutlinePending className='mr-3 text-xl' /> Pending Tasks</div>
           <div onClick={(e)=>fetchTask(status[1])}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiProgress4Line  className='mr-3 text-xl' /> In Progress Tasks</div>
          <div onClick={(e)=>fetchTask(status[2])} className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><IoCloudDoneOutline className='mr-3 text-xl' /> Completed Tasks</div>
-         <Link href="/UserDashboard/UserPage" className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiTeamLine className='mr-3 text-xl' />Team Members</Link>
+        
+        {user.role.toLowerCase()==='admin' && <Link href="/UserDashboard/UserPage" className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiTeamLine className='mr-3 text-xl' />Team Members</Link>} 
        
       </nav>
     </div>

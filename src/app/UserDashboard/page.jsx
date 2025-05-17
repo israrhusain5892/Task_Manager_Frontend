@@ -77,7 +77,7 @@ function page() {
 
   return (
 
-    <div className="p-4 space-y-6 bg-gray-100 min-h-screen">
+    <div className="p-4 space-y-6 bg-gray-100 min-h-screen w-full">
       <h1 className='text-2xl font-semibold text-gray-600'>OverView</h1>
       <h1 className='text-xl text-blue-900'>Hi {user?.name} !!</h1>
       {/* Cards */}
@@ -120,12 +120,12 @@ function page() {
       </div>
       <h1 className='text-xl font-semibold recent-activity'>Recent Activity</h1>
 
-      <section className='bg-white overflow-x-auto min-w-full'>
-        <table className='w-full py-4 '>
+      <section className='bg-white w-full  py-4 px-4'>
+        <table className='w-full py-4  text-nowrap'>
           <thead>
-            <tr className='border-b  border-gray-300 w-full text-center py-4'>
+            <tr className='border-bottom  border-gray-400 w-full text-center py-4'>
               <th>
-                sr no.
+                Sr No.
               </th>
               <th>
                 Activity ID
@@ -133,40 +133,28 @@ function page() {
               <th>
                 Action
               </th>
+             
               <th>
-                Task Status
+                Activity Date
               </th>
             </tr>
           </thead>
           <tbody>
+            {
+              activity?.map((act, index) => {
+                return <tr key={index} className='w-full text-center py-4 px-2 border-bottom border-gray-400'>
+                  <td className='px-2'>{index+1}</td>
+                  <td className='px-2'>{act._id}</td>
+                  <td className='px-2'>{act.action}</td>
+                  {/* <td className='px-2'>{act?.taskId.description}</td> */}
+                  <td className='px-2'>{act.timestamp}</td>
+                </tr>
+              })
 
-            <tr className='w-full text-center py-4'>
-              <td>1</td>
-              <td>1</td>
-              <td>To Do signup page</td>
-              <td>Completed</td>
-            </tr>
+            }
 
-            <tr className='w-full text-center'>
-              <td>2</td>
-              <td>2</td>
-              <td>To Do signup page</td>
-              <td>Completed</td>
-            </tr>
 
-            <tr className='w-full text-center'>
-              <td>3</td>
-              <td>3</td>
-              <td>To Do signup page</td>
-              <td>Completed</td>
-            </tr>
 
-            <tr className='w-full text-center'>
-              <td>4</td>
-              <td>4</td>
-              <td>To Do signup page</td>
-              <td>Completed</td>
-            </tr>
 
           </tbody>
 

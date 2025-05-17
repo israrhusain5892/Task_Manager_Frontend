@@ -1,7 +1,8 @@
 // Api call here
 import axios from 'axios';
 
-// const ROOT_URL = "https://task-manager-backend-t9v7.onrender.com";
+
+
 const ROOT_URL="http://localhost:4000";
 
 let user;

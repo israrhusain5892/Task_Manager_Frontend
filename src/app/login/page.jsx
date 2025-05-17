@@ -67,6 +67,7 @@ const Login = () => {
 
       catch (error) {
         toast.error("some thing went wrong try again", error)
+        setLoading(false);
       }
 
       // Reset form

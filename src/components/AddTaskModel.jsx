@@ -135,6 +135,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
               placeholder="Enter title"
               name="title"
               required
+              readOnly={user.role==='user'}
               value={formData.title}
               onChange={handleChange}
               className="mt-1 py-1 px-1 outline-none block w-full rounded-md border border-gray-300  focus:ring-blue-500 focus:border-blue-500"
@@ -147,6 +148,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
               name="description"
               value={formData.description}
               onChange={handleChange}
+               readOnly={user.role==='user'}
               placeholder='add ypur description'
               className="mt-1 px-1 block w-full py-1 outline-none rounded-md border border-gray-300  focus:ring-blue-500 focus:border-blue-500"
             />
@@ -156,6 +158,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
             <input
               type="date"
               name="dueDate"
+               readOnly={user.role==='user'}
               value={formData.dueDate}
               onChange={handleChange}
               className="mt-1 block w-full py-2 px-1 outline-none rounded-md border border-gray-300  focus:ring-blue-500 focus:border-blue-500"
@@ -166,6 +169,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
             <label className="block text-sm font-medium text-gray-700">Priority</label>
             <select
               name="priority"
+               readOnly={user.role==='user'}
               value={formData.priority}
               onChange={handleChange}
               className="mt-1 py-2 px-1 block w-full rounded-md border border-gray-300 outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -173,6 +177,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
               <option value="" disabled>select</option>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
+               readOnly={user.role==='user'}
               <option value="High">High</option>
             </select>
           </div>
