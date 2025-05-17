@@ -1,0 +1,136 @@
+/* Basic styling for the page */
+.usersPage {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.list {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size:20px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Wrapping the table in a div to make it scrollable on small screens */
+/* .tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+
+
+/* Styling for the table */
+.responsiveTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* table-layout: fixed; */
+}
+
+.responsiveTable th,
+.responsiveTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  
+}
+
+.responsiveTable th {
+  background-color: #f4f4f4;
+}
+
+.responsiveTable td {
+  background-color: #fafafa;
+}
+
+.responsiveTable button {
+  padding: 6px 12px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.responsiveTable button:hover {
+  background-color: #0056b3;
+}
+
+
+.searchWrapper {
+  margin-bottom: 20px;
+  text-align: center;
+  /* float: left; */
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #007bff;
+}
+
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  font-size: 14px;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Smaller padding for smaller screens */
+  .responsiveTable th,
+  .responsiveTable td {
+    font-size: 14px;
+    padding: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .responsiveTable button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+
+ 
+
+ 
+
+@media (max-width: 480px) {
+  /* Optional: Adjust font size for very small screens */
+  .responsiveTable th,
+  .responsiveTable td {
+    font-size: 12px;
+  }
+}
