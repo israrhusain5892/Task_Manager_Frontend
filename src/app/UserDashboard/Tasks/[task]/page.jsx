@@ -22,7 +22,7 @@ const TaskPage = () => {
  const[isMount,setIsMount]=useState(false)
   
   const params = useParams();
-  
+  console.log(params.task)
   useEffect(() => {
     if(!isMount){
       setIsMount(true)
@@ -45,7 +45,7 @@ const TaskPage = () => {
     const filteredData = params.task == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(params.task.toLowerCase()));
     
     setTasksData(filteredData)
-    setTasksData(tasks)
+    
   }, [tasks,params.task])
 
 
