@@ -42,9 +42,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <Link href={`/UserDashboard/Tasks/${status[3]}`} className="flex items-center px-4 py-2 hover:bg-gray-700">
           <FaTasks className="mr-3" />All Tasks
         </Link>
-         <div onClick={(e)=>fetchTask(status[0])}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><MdOutlinePending className='mr-3 text-xl' /> Pending Tasks</div>
-          <div onClick={(e)=>fetchTask(status[1])}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiProgress4Line  className='mr-3 text-xl' /> In Progress Tasks</div>
-         <div onClick={(e)=>fetchTask(status[2])} className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><IoCloudDoneOutline className='mr-3 text-xl' /> Completed Tasks</div>
+         <Link href={`/UserDashboard/Tasks/${status[0]}`}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><MdOutlinePending className='mr-3 text-xl' /> Pending Tasks</Link>
+          <Link href={`/UserDashboard/Tasks/${status[1]}`}  className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiProgress4Line  className='mr-3 text-xl' /> In Progress Tasks</Link>
+         <Link href={`/UserDashboard/Tasks/${status[2]}`} className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><IoCloudDoneOutline className='mr-3 text-xl' /> Completed Tasks</Link>
         
         {user?.role==='admin' && <Link href="/UserDashboard/UserPage" className='flex  px-4 py-2 items-center cursor-pointer hover:bg-gray-700'><RiTeamLine className='mr-3 text-xl' />Team Members</Link>} 
        
