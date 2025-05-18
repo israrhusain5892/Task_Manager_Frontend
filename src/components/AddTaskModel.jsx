@@ -208,8 +208,8 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
             >
               <option selected disable>Assign To</option>
               {users?.map((user) => (
-                <option key={user.user._id} value={user.user._id}>
-                  {user.user.name}
+                <option key={user._id} value={user._id}>
+                  {user.name}
                 </option>
               ))}
             </select>
