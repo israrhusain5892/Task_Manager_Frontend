@@ -2,6 +2,7 @@
 .usersPage {
   padding: 20px;
   font-family: Arial, sans-serif;
+  height: 100vh;
 }
 
 .list {
