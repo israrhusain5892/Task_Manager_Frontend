@@ -21,7 +21,7 @@ const TaskPage = () => {
   const [tasks, setTasks] = useState([])
  const[isMount,setIsMount]=useState(false)
   
-  // const params = useParams()
+  const params = useParams();
   
   useEffect(() => {
     if(!isMount){
@@ -41,10 +41,10 @@ const TaskPage = () => {
 
   // console.log(tasks)
   // filter data based on status 
-  // useEffect(() => {
-  //   const filteredData = params.task == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(params.task.toLowerCase()));
-  //   setTasksData(filteredData)
-  // }, [tasks,params.task])
+  useEffect(() => {
+    const filteredData = params.task == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(params.task.toLowerCase()));
+    setTasksData(filteredData)
+  }, [tasks,params.task])
 
 
 
