@@ -32,6 +32,7 @@ const TaskPage = () => {
       if (res.status === 201 || res.status === 200) {
         setLoading(false)
       }
+      setTasks(res.data);
       setTasksData(res.data)
     };
     fetchTasks()
@@ -122,8 +123,7 @@ const TaskPage = () => {
                 return task;
               }
               else if (task.title?.toLowerCase().includes(searchQuery) ||
-                task.description?.toLowerCase().includes(searchQuery) ||
-                task.status?.toLowerCase().includes(params.task.toLowerCase())) {
+                task.description?.toLowerCase().includes(searchQuery)) {
                 return task;
               }
             }).map((task, index) => (
