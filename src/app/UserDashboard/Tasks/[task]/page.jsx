@@ -43,7 +43,8 @@ const TaskPage = () => {
   // console.log(tasks)
   // filter data based on status 
   useEffect(() => {
-    const filteredData = params.task == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(params.task.toLowerCase()));
+     const decodedTaskParam = decodeURIComponent(params.task || '').toLowerCase();
+    const filteredData = decodedTaskParam == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(decodedTaskParam));
     
     setTasksData(filteredData)
     
