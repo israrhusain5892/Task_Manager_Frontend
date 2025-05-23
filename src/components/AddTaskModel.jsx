@@ -49,12 +49,13 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
           })
         })
       }
+      toast.success("Task Edit successfully");
+
       //  toast.success("Task added successfully!!")
       setTimeout(() => {
         onClose();
-      }, 1000)
-      toast.success("Task Edit successfully", response.data.title);
-
+      }, 2000)
+      
     }
     catch (error) {
       setLoading(false)
@@ -116,7 +117,7 @@ const AddTaskModel = ({ isOpen, edit, onClose, setEdit, onSubmit, handleEdit }) 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-mt ">
-      <ToastContainer position='top-center'></ToastContainer>
+      <ToastContainer  autoClose={1000}  onClick={close} newestOnTop={false} position='top-center'/>
       <div className="bg-white rounded-xl shadow-lg w-full max-w-lg  p-4 relative">
         <button
           onClick={onClose}

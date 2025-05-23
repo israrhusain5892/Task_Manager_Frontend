@@ -2,6 +2,7 @@
 import '../globals.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+// import Notification from '@/components/Notification'
 // import Layout from '@/app/UserDashboard/layout';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Pie, Cell, Legend
@@ -161,6 +162,7 @@ function page() {
 
         </table>
       </section>
+   
 
     </div>
 

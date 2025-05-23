@@ -28,6 +28,7 @@ const TaskPage = () => {
       setIsMount(true)
     }
     const fetchTasks = async () => {
+      setLoading(true)
       const res = await getAllTasks();
       if (res.status === 201 || res.status === 200) {
         setLoading(false)
@@ -44,7 +45,7 @@ const TaskPage = () => {
   // filter data based on status 
   useEffect(() => {
      const decodedTaskParam = decodeURIComponent(params.task || '').toLowerCase();
-    const filteredData = decodedTaskParam == 'AllTasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(decodedTaskParam));
+    const filteredData = decodedTaskParam == 'alltasks' ? tasks : tasks?.filter(task => task.status.toLowerCase().includes(decodedTaskParam));
     
     setTasksData(filteredData)
     
@@ -113,7 +114,7 @@ const TaskPage = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full p-3 mb-6 border border-gray-300 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-           {user.role.toLowerCase==='admin' && <button className='md:w-40 w-36 md:text-md text-[12px] cursor-pointer hover:bg-blue-600 rounded h-12 p-3 shadow-md bg-blue-500 text-white' onClick={openModel}>ADD NEW TASK</button>} 
+           {user.role==='admin' && <button className='md:w-40 w-36 md:text-md text-[12px] cursor-pointer hover:bg-blue-600 rounded h-12 p-3 shadow-md bg-blue-500 text-white' onClick={openModel}>ADD NEW TASK</button>} 
 
           </div>
 
